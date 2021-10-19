@@ -31,11 +31,8 @@ student2.addMark(4);
 student3.addMark(5); 
 
 Student.prototype.addMarks = function (...mark) {
-    if(this.marks === undefined){ 
     this.marks = [mark];
-    } else {
-      this.marks.push(...mark); 
-    }
+    this.marks.push(...mark); 
 }
 
 
