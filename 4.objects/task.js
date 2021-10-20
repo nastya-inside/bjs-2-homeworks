@@ -10,7 +10,7 @@ const student3 = new Student("Timur", "male", 18);
 
 
 Student.prototype.setSubject = function (subjectName) {
-   this.subjectName = subject; 
+   this.subject = subjectName; 
 }
 
 student1.setSubject("Math");
@@ -31,8 +31,11 @@ student2.addMark(4);
 student3.addMark(5); 
 
 Student.prototype.addMarks = function (...mark) {
-    this.marks = [mark];
-    this.marks.push(...mark); 
+    if(this.marks === undefined){ 
+    this.marks = mark;
+    } else {
+      this.marks.push(...mark); 
+    }
 }
 
 
