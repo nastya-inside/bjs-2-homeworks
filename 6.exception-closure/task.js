@@ -5,57 +5,59 @@ const parseCount = (value) => {
     
     if (isNaN(result)) {
         throw new Error ('Невалидное значение');
-    } else {
+    }
         return result;
     }
-}
 
 const validateCount = (value) => {
     
     try {
-        let result = parseCount(value);
+        return parseCount(value);
     }
     catch(err) {
-        console.error("Ошибка!"); 
+        return console.error("Ошибка!"); 
     }
-    
-    return result;
 }
 
 //Задание №2 
 
 class Triangle {
     constructor (a, b, c) {
-    }
-    
-    if ((((a + b) > c) && ((a + c) > b) && ((b + c) > a)) === false) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        
+         if (a + b > c || a + c > b || b + c > a === false) {
          throw new Error ('Треугольник с такими сторонами не существует');
     }
+    }
     
-    getPerimeter(){
-        return a + b + c;
+    
+    getPerimeter(){        
+        return this.a + this.b + this.c;
     }
 
-    getArea() {
-        let S;
-        let p;
+    getArea() {        
+        let S = ((this.a + this.b + this.c)/2 - this.a) * ((this.a + this.b + this.c)/2 - this.b);
         
-        p = getPerimeter / 2;
-        
-        S = (p − a) * (p − b);
-        
-        return S.toFixed(3);
+        return +S.toFixed(3);
     }
 
     const getTriangle = (a, b, c) => {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        
         try {
             return new Triangle;
         }
         catch {
-            return new Object() {
+            
+            const newObject = {
             getArea() {return "Ошибка! Треугольник не существует"};
             getPerimeter(){return "Ошибка! Треугольник не существует"};
             }
+            return newObject;
             }
     }
 }
