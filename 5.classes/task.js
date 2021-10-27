@@ -10,10 +10,12 @@ class PrintEditionItem {
     }
     
     fix() {
-       this.state * 1.5;
+       this.state *= 1.5;
     }
     
     set state(newState) {
+       let _state;
+        
        if (newState < 0){
            newState = 0;
        }
@@ -21,7 +23,7 @@ class PrintEditionItem {
             newState = 100;
         }
         else {
-            this._state = state;
+            this._state = newState;
         }
     }
     
@@ -29,6 +31,19 @@ class PrintEditionItem {
         return this._state;
     }
 };
+
+const sherlock = new PrintEditionItem(
+  "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
+  2019,
+  1008
+);
+
+console.log(sherlock.name); 
+sherlock.state = 10;
+console.log(sherlock.state); 
+sherlock.fix();
+console.log(sherlock.state); 
+
 
 class Magazine extends PrintEditionItem {
     constructor(name, releaseDate, pagesCount) {
@@ -61,6 +76,8 @@ class FantasticBook extends Book {
 class DetectiveBook extends Book {
     this.type = "detective";
 }
+
+
 
 //Задача №2
 
@@ -126,9 +143,7 @@ console.log("Количество книг до выдачи: " + library.books.
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3 
 
-
-
-
+*/
     
     
     
