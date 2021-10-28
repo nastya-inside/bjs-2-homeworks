@@ -14,7 +14,6 @@ class PrintEditionItem {
     }
     
     set state(newState) {
-       let _state;
         
        if (newState < 0){
            newState = 0;
@@ -22,9 +21,7 @@ class PrintEditionItem {
         else if (newState > 100) {
             newState = 100;
         }
-        else {
             this._state = newState;
-        }
     }
     
     get state() {
@@ -47,35 +44,46 @@ console.log(sherlock.state);
 
 class Magazine extends PrintEditionItem {
     constructor(name, releaseDate, pagesCount) {
-        this.name = name;
-        this.releaseDate = releaseDate;
-        this.pagesCount = pagesCount;
-        this.state = 100;
+        super(name, releaseDate, pagesCount);
         this.type = "magazine"; 
     }
 }
 
 class Book extends PrintEditionItem {
     constructor(name, releaseDate, pagesCount, author) {
-        this.name = name;
-        this.releaseDate = releaseDate;
-        this.pagesCount = pagesCount;
-        this.state = 100;
-        this.type = "book";   
+        super(name, releaseDate, pagesCount);
+        this.type = "book"; 
+        this.author = "author";
     }
 }
 
 class NovelBook extends Book {
-    this.type = "novel";
+    construtor(name, releaseDate, pagesCount, author){
+        this.type = "novel";
+    }
 }
 
 class FantasticBook extends Book {
-    this.type = "fantastic";
+    construtor(name, releaseDate, pagesCount, author){
+        this.type = "fantastic";
+    }
 }
 
 class DetectiveBook extends Book {
-    this.type = "detective";
+    construtor(name, releaseDate, pagesCount, author){
+        this.type = "detective";
+    }
 }
+
+const myMagazine = new Magazine("Наука и жизнь", 1978, 115);
+console.log(myMagazine.name);
+console.log(myMagazine.type);
+
+const myNovelbook = new NovelBook("Fantasy", 1567, 100);
+console.log(myNovelbook.pagesCount);
+
+const myDetectiveBook = new DetectiveBook("Detective", 1787, 384);
+console.log(myDetectiveBook.type);
 
 
 
@@ -143,7 +151,7 @@ console.log("Количество книг до выдачи: " + library.books.
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3 
 
-*/
+
     
     
     
