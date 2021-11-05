@@ -12,22 +12,19 @@ const parseCount = (value) => {
 const validateCount = (value) => {
     
     try {
-        return parseCount(value);
+    return parseCount(value);
     }
     catch(err) {
-        return console.error("Ошибка!"); 
+        throw new Error('Ошибка!'); 
     }
 }
 
-//Задание №2 
+//Задание №2  
 
 class Triangle {
     constructor (a, b, c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
         
-         if (a + b > c || a + c > b || b + c > a === false) {
+         if (a + b > c || a + c > b || b + c > a) {
          throw new Error ('Треугольник с такими сторонами не существует');
     }
     }
@@ -38,27 +35,25 @@ class Triangle {
     }
 
     getArea() {        
-        let S = ((this.a + this.b + this.c)/2 - this.a) * ((this.a + this.b + this.c)/2 - this.b);
-        
+        let S = Math.sqrt(getPerimeter*(getPerimeter - a)*(getPerimeter - b)*(getPerimeter - c);
+                          
         return +S.toFixed(3);
     }
+}
 
-    const getTriangle = (a, b, c) => {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+   const getTriangle = (a, b, c) => {
+        Triangle.a = a;
+        Triangle.b = b;
+        Triangle.c = c;
         
         try {
             return new Triangle;
         }
         catch {
-            
-            const newObject = {
+            return {
             getArea() {return "Ошибка! Треугольник не существует"};
             getPerimeter(){return "Ошибка! Треугольник не существует"};
             }
-            return newObject;
             }
     }
-}
 
