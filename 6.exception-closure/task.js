@@ -23,28 +23,30 @@ const validateCount = (value) => {
 
 class Triangle {
     constructor (a, b, c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
         
-         if (a + b > c || a + c > b || b + c > a) {
-         throw new Error ('Треугольник с такими сторонами не существует');
+        if (a + b > c || a + c > b || b + c > a) {
+        throw new Error ('Треугольник с такими сторонами не существует');
     }
     }
     
     
-    getPerimeter(){        
+    P = getPerimeter(){        
         return this.a + this.b + this.c;
     }
+    
+    p = P / 2;
 
     getArea() {        
-        let S = Math.sqrt(getPerimeter*(getPerimeter - a)*(getPerimeter - b)*(getPerimeter - c);
+        let S = Math.sqrt(p*(p - a)*(p - b)*(p - c);
                           
         return +S.toFixed(3);
     }
 }
 
    const getTriangle = (a, b, c) => {
-        Triangle.a = a;
-        Triangle.b = b;
-        Triangle.c = c;
         
         try {
             return new Triangle;
@@ -56,4 +58,3 @@ class Triangle {
             }
             }
     }
-
