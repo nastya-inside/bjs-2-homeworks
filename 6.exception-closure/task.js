@@ -32,16 +32,13 @@ class Triangle {
     }
     }
     
-    
-    P = getPerimeter(){        
+    getPerimeter(){        
         return this.a + this.b + this.c;
+        const p = getPerimeter() / 2;
     }
     
-    p = P / 2;
-
     getArea() {        
-        let S = Math.sqrt(p*(p - a)*(p - b)*(p - c);
-                          
+        let S = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));                  
         return +S.toFixed(3);
     }
 }
@@ -49,12 +46,12 @@ class Triangle {
    const getTriangle = (a, b, c) => {
         
         try {
-            return new Triangle;
+            return new Triangle(a, b, c);
         }
         catch {
             return {
-            getArea() {return "Ошибка! Треугольник не существует"};
-            getPerimeter(){return "Ошибка! Треугольник не существует"};
+            getArea() {return "Ошибка! Треугольник не существует"}
+            getPerimeter() {return "Ошибка! Треугольник не существует"}
             }
             }
     }
