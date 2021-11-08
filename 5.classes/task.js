@@ -58,38 +58,36 @@ class Book extends PrintEditionItem {
 }
 
 class NovelBook extends Book {
-    construtor(author, name, releaseDate, pagesCount){
-        super(name, releaseDate, pagesCount);
+    constructor(author, name, type, releaseDate, pagesCount){
+        super(author, name, type, releaseDate, pagesCount);
         this.type = "novel";
     }
 }
 
 class FantasticBook extends Book {
-    construtor(author, name, releaseDate, pagesCount){
-        super(name, releaseDate, pagesCount);
+       constructor(author, name, type, releaseDate, pagesCount){
+        super(author, name, type, releaseDate, pagesCount);
         this.type = "fantastic";
     }
 }
 
 class DetectiveBook extends Book {
-    construtor(author, name, releaseDate, pagesCount){
-        super(name, releaseDate, pagesCount);
+       constructor(author, name, type, releaseDate, pagesCount){
+        super(author, name, type, releaseDate, pagesCount);
         this.type = "detective";
     }
 }
 
-const myMagazine = new Magazine("Наука и жизнь", 1978, 115);
-console.log(myMagazine.name);
-console.log(myMagazine.type);
 
-const myNovelbook = new NovelBook("Fantasy", 1567, 100);
+const myNovelbook = new NovelBook("No name", "Novel", 1567, 100);
 console.log(myNovelbook.pagesCount);
 
-const myDetectiveBook = new DetectiveBook("Detective", 1787, 384);
-console.log(myDetectiveBook.type);
+const myNewFantasticBook = new FantasticBook("No name", "Fantasy", 1898, 898);
+console.log(myNewFantasticBook.author);
+console.log(myNewFantasticBook.pagesCount);
 
 
-
+/*
 //Задача №2
 
 class Library {
@@ -154,7 +152,7 @@ console.log("Количество книг до выдачи: " + library.books.
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3 
 
-
+*/
     
     
     
