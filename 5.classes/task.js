@@ -87,7 +87,7 @@ console.log(myNewFantasticBook.author);
 console.log(myNewFantasticBook.pagesCount);
 
 
-/*
+
 //Задача №2
 
 class Library {
@@ -97,9 +97,8 @@ class Library {
     }
     
     addBook(book) {
-        let state;
-        if (state > 30) {
-            books.push(this.book);
+        if (book.state > 30) {
+            this.books.push(book);
         }
     }
     
@@ -145,14 +144,14 @@ library.addBook(
 library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
-console.log(library.findBookBy("name", "Властелин колец")); //null
-console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
+console.log(library.findBookBy("name", "Машина времени")); //null
+console.log(library.findBookBy("releaseDate", 1924)); //"Мурзилка"
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3 
 
-*/
+
     
     
     
