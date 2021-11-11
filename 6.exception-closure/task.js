@@ -27,24 +27,30 @@ class Triangle {
         this.b = b;
         this.c = c;
         
-        if (a + b > c || a + c > b || b + c > a) {
+        if (a + b < c || a + c < b || b + c < a) {
         throw new Error ('Треугольник с такими сторонами не существует');
     }
     }
     
-    getPerimeter(){        
+    getPerimeter(){
         return this.a + this.b + this.c;
-        const p = getPerimeter() / 2;
     }
-    
-    getArea() {        
-        let S = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));                  
+        
+    getArea() {
+        const p = this.getPerimeter() / 2;
+        const S = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));                  
         return +S.toFixed(3);
     }
 }
 
+let example = new Triangle (20, 13, 10);
+
+console.log(example.getPerimeter());
+console.log(example.getArea());
+
+
    const getTriangle = (a, b, c) => {
-        
+       
         try {
             return new Triangle(a, b, c);
         }
