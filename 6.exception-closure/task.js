@@ -48,7 +48,7 @@ let example = new Triangle (20, 13, 10);
 console.log(example.getPerimeter());
 console.log(example.getArea());
 
-
+/*
    const getTriangle = (a, b, c) => {
        
         try {
@@ -61,3 +61,4 @@ console.log(example.getArea());
             }
             }
     }
+*/
