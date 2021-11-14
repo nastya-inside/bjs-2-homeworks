@@ -103,23 +103,27 @@ class Library {
     }
     
     findBookBy(type, value) {
-        if (type === true && value === true) {
-            return this.book;
-        }
+        for (let i = 0; i < this.books.length; i++) {
+            if (this.books[i[type]] === value) {
+             return this.books[i];   
+            }
         else {
             return null;
+        }
         }
     }
     
     giveBookByName(bookName) {
-        if (bookName === true) {
-            delete this.book;
-            return this.book;
+         for (let i = 0; i < this.books.length; i++) {
+            if (this.books[i].name === bookName) {
+            delete this.book[i];
+            return this.book[i];
         }
         else {
             return null;
         }
     }
+}
 }
 
 const library = new Library("Библиотека имени Ленина");
@@ -142,23 +146,11 @@ library.addBook(
 );
 
 library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
-library.addBook(new Magazine("Мурзилка", 1924, 60));
+library.addBook(new Magazine("no name", "Мурзилка", 1924, 60));
 
-console.log(library.findBookBy("name", "Машина времени")); //null
-console.log(library.findBookBy("releaseDate", 1924)); //"Мурзилка"
+console.log(library.findBookBy("name", "Пикник на обочине")); 
+console.log(library.findBookBy("releaseDate", 2019));
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-library.giveBookByName("Машина времени");
+console.log(library.giveBookByName("Пикник на обочине"));
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3 
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
