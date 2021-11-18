@@ -104,25 +104,21 @@ class Library {
     
     findBookBy(type, value) {
         for (let i = 0; i < this.books.length; i++) {
-            if (this.books[i[type]] === value) {
+            if (this.books[i][type] === value) {
              return this.books[i];   
             }
-        else {
+        }
             return null;
-        }
-        }
     }
     
     giveBookByName(bookName) {
          for (let i = 0; i < this.books.length; i++) {
             if (this.books[i].name === bookName) {
-            delete this.book[i];
-            return this.book[i];
-        }
-        else {
-            return null;
+            this.books.splice(i, 0);
+            return this.books[i];
         }
     }
+            return null;
 }
 }
 
@@ -142,6 +138,15 @@ library.addBook(
     "Пикник на обочине",
     1972,
     168
+  )
+);
+
+library.addBook(
+  new FantasticBook(
+    "No name",
+    "A thing",
+    1789,
+    234
   )
 );
 
