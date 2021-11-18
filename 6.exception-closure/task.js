@@ -48,17 +48,18 @@ let example = new Triangle (20, 13, 10);
 console.log(example.getPerimeter());
 console.log(example.getArea());
 
-/*
+
    const getTriangle = (a, b, c) => {
        
         try {
             return new Triangle(a, b, c);
         }
-        catch {
+        catch(err) {
             return {
-            getArea() {return "Ошибка! Треугольник не существует"}
+            getArea() {return "Ошибка! Треугольник не существует"},
             getPerimeter() {return "Ошибка! Треугольник не существует"}
             }
             }
     }
-*/
+
+console.log(getTriangle(13, 4, 56));
