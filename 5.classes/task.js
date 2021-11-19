@@ -114,8 +114,8 @@ class Library {
     giveBookByName(bookName) {
          for (let i = 0; i < this.books.length; i++) {
             if (this.books[i].name === bookName) {
-            this.books.splice(i, 0);
-            return this.books[i];
+            let bookFound = this.books.splice(i, 1);
+            return bookFound;
         }
     }
             return null;
@@ -157,5 +157,5 @@ console.log(library.findBookBy("name", "Пикник на обочине"));
 console.log(library.findBookBy("releaseDate", 2019));
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-console.log(library.giveBookByName("Пикник на обочине"));
+console.log(library.giveBookByName("A thing"));
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3 
