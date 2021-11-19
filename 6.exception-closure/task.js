@@ -15,7 +15,7 @@ const validateCount = (value) => {
     return parseCount(value);
     }
     catch(err) {
-        throw new Error('Ошибка!'); 
+        return err.message; 
     }
 }
 
